@@ -7,7 +7,7 @@ function App() {
 
   const [unicornSize, setUnicornSize] = useState(10); 
   const [lionSize, setLionSize] = useState(10); 
-  const [OpenStatus, setOpenStatus] = useState('closed');
+  const [OpenStatus, setOpenStatus] = useState(false);
   const [parade, setParade] = useState(['fox', 'raccoon']);
   
 
@@ -33,11 +33,15 @@ function App() {
           </div>
         </div>
       </div>
+
       <OpenSign isOpen={OpenStatus} />
       <div className="buttons">
-        <button onClick={() => setOpenStatus('open')}>We are open</button>
-        <button onClick={() => setOpenStatus('closed')}>Sorry, we are closed</button>
+        <button onClick={() => setOpenStatus(true)}>open</button>
+        <button onClick={() => setOpenStatus(false)}>closed</button>
+        {OpenStatus && <h2>We are open!</h2>}
+        {!OpenStatus && <h2>Sorry, we are closed</h2>}
       </div>
+
       <AnimalEmojiList animals={parade} />
       <div className='buttons'>
         <button onClick={() => setParade([...parade, 'fox'])}>Fox</button>
