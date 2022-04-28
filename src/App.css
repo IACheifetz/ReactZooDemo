@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.animal-parade {
+  display: flex;
+}
+
+.animal-parade .animal {
+  margin: 10px;
+}
+.fight .animal .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
