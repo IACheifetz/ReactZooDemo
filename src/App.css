@@ -2,6 +2,7 @@
   text-align: center;
   background-color: darkgrey;
   height: 100%;
+  
 }
 
 body {
@@ -20,6 +21,11 @@ body {
 
 .animal-parade {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  right: 565px;
+  width: 30%;
   background-color: darkgrey;
 }
 

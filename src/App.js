@@ -38,8 +38,8 @@ function App() {
       <div className="buttons">
         <button onClick={() => setOpenStatus(true)}>open</button>
         <button onClick={() => setOpenStatus(false)}>closed</button>
-        {OpenStatus && <h2>We are open!</h2>}
-        {!OpenStatus && <h2>Sorry, we are closed</h2>}
+        {OpenStatus && <h2>The zoo is open!</h2>}
+        {!OpenStatus && <h2>Sorry, the zoo is closed</h2>}
       </div>
 
       <AnimalEmojiList animals={parade} />
