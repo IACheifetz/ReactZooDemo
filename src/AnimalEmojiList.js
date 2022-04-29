@@ -3,8 +3,8 @@ import Animal from './AnimalEmoji.js';
 
 export default function AnimalEmojiList(props) {
   return (
-    <div className="animal-parade">
+    <h1 className="animal-parade">
       {props.animals.map(animal => <Animal key={animal} animal={animal} />)}
-    </div>
+    </h1>
   );
 }
