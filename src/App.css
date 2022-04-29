@@ -24,7 +24,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
-  right: 565px;
+  right: 675px;
   width: 30%;
   background-color: darkgrey;
 }
@@ -40,7 +40,8 @@ body {
   align-items: center;
   height: 200px;
   margin: 40px;
-  width: 100%;
+  /* width: 100%; */
+  right: 645px;
   background-color: darkgrey;
 }
 
