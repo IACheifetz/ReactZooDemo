@@ -1,53 +1,28 @@
 import './App.css';
 import React, { useState } from 'react';
 import OpenSign from './OpenSign.js';
-import AnimalEmojiList from './AnimalEmojiList.js';
+import Fight from './Fight.js';
+import Parade from './Parade.js';
+import CustomButton from './CustomButton';
 
 function App() {
 
-  const [unicornSize, setUnicornSize] = useState(10); 
-  const [lionSize, setLionSize] = useState(10); 
   const [OpenStatus, setOpenStatus] = useState(false);
-  const [parade, setParade] = useState(['fox', 'raccoon']);
   
 
   return (
     <div className="App">
-      <div className="fight">
-        <div className="animal">
-          <p style={{
-            fontSize: `${lionSize}px`
-          }}>🦁</p>
-          <div className='buttons'>
-            <button onClick={() => setLionSize(lionSize + 3)}>Lion eats some meat</button>
-            <button onClick={() => setUnicornSize(unicornSize - 3)}>Lion bites the Unicorn</button>
-          </div>
-        </div>
-        <div className="animal">
-          <p style={{
-            fontSize: `${unicornSize}px`
-          }}>🦄</p>
-          <div className="buttons">
-            <button onClick={() => setUnicornSize(unicornSize + 3)}>Unicorn grazes</button>
-            <button onClick={() => setLionSize(lionSize - 3)}>Unicorn stabbed the Lion</button>
-          </div>
-        </div>
-      </div>
+      <Fight />
 
       <OpenSign isOpen={OpenStatus} />
       <div className="buttons">
-        <button onClick={() => setOpenStatus(true)}>open</button>
-        <button onClick={() => setOpenStatus(false)}>closed</button>
+        <CustomButton onClick={() => setOpenStatus(true)}>open</CustomButton>
+        <CustomButton onClick={() => setOpenStatus(false)}>closed</CustomButton>
         {OpenStatus && <h2>The zoo is open!</h2>}
         {!OpenStatus && <h2>Sorry, the zoo is closed</h2>}
       </div>
-
-      <AnimalEmojiList animals={parade} />
       <div className='buttons'>
-        <button onClick={() => setParade([...parade, 'fox'])}>Fox</button>
-        <button onClick={() => setParade([...parade, 'raccoon'])}>Raccoon</button>
-        <button onClick={() => setParade([...parade, 'rat'])}>Rat</button>
-        <button onClick={() => setParade([...parade, 'orangutan'])}>Orangutan</button>
+        <Parade />
       </div>
     </div>
     
