@@ -1,30 +1,46 @@
 import './App.css';
-import React, { useState } from 'react';
-import OpenSign from './OpenSign.js';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 import Fight from './Fight.js';
 import Parade from './Parade.js';
-import CustomButton from './CustomButton';
+import AdminPage from './AdminPage';
+import ZooOpen from './ZooOpen';
 
 function App() {
-
-  const [OpenStatus, setOpenStatus] = useState(false);
   
 
   return (
-    <div className="App">
-      <Fight />
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/admin">Admin</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-      <OpenSign isOpen={OpenStatus} />
-      <div className="buttons">
-        <CustomButton onClick={() => setOpenStatus(true)}>open</CustomButton>
-        <CustomButton onClick={() => setOpenStatus(false)}>closed</CustomButton>
-        {OpenStatus && <h2>The zoo is open!</h2>}
-        {!OpenStatus && <h2>Sorry, the zoo is closed</h2>}
-      </div>
-      <div className='buttons'>
-        <Parade />
-      </div>
-    </div>
+      <Switch>
+        <div className="App">
+          <Route path="/admin">
+            <AdminPage />
+          </Route>
+          <Fight />
+          <ZooOpen />
+          <Parade />
+        
+        </div>
+      </Switch>
+    </Router>
     
   );
 }
